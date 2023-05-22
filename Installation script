@@ -35,3 +35,46 @@ sudo apt-get update
 #Verify that the Docker Engine installation is successful by running the hello-world image.
 
  sudo docker run hello-world
+ 
+ 
+ #Start docker engine 
+ 
+ systemctl start docker 
+ systemctl enable docker.service 
+ 
+ 
+ #Install, start and configure Jenkins 
+ #Install java as prerequisite 
+
+sudo apt update
+java -version
+sudo apt install default-jre
+sudo apt install default-jdk
+javac -version
+
+
+# Installing Jenkins
+
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg
+sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+sudo apt update
+
+sudo apt install jenkins
+sudo systemctl start jenkins.service
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
